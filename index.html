@@ -1,19 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Open Excel</title>
+  <title>Student Trading Cards</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background-color: #f5f6f8;
+      color: #333;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      max-width: 420px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 14px 28px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #0078d4;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    button:hover {
+      background-color: #005fa3;
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
-  <h2>Open Excel File</h2>
-  <button onclick="openExcel()">Open in Desktop Excel</button>
+
+  <div class="card">
+    <h1>Student Trading Cards</h1>
+    <p>
+      This page will automatically open the Student Trading Card Excel file in the desktop app.<br><br>
+      If nothing happens, use the button below.
+    </p>
+
+    <button onclick="openExcel()">Open in Desktop Excel</button>
+  </div>
 
   <script>
     function openExcel() {
       const url = "ms-excel:ofe|u|https://163gc.sharepoint.com/sites/CanAI/Shared%20Documents/%F0%9F%93%9F%20CanAI%20Command%20Center%20(CCC)/CCC%20Reporting%20Group%201/Student%20Trading%20Cards/OPEN%20IN%20EXCEL%20APP%20Student%20Trading%20Cards%20Workbook%200.3.xlsm";
       window.location.href = url;
     }
+
+    // ✅ AUTO-OPEN goes RIGHT HERE
+    window.onload = function() {
+      openExcel();
+    };
   </script>
 
-  <p>If nothing happens, your browser may be blocking the action. Try Microsoft Edge.</p>
 </body>
 </html>
